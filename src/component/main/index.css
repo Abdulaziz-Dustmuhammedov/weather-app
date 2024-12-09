@@ -1,0 +1,60 @@
+/*  */
+
+.main {
+  /* width: 500px; */
+  /* height: 570px;
+  border-radius: 50px;
+  background-image: url("../../assets/images/Background.png");
+  background-repeat: no-repeat;
+  background-size: 100%; */
+  background-color: #6aa9dd;
+}
+.main-folder {
+  height: 100vh;
+}
+.main-text {
+  color: #f1f1f1;
+}
+.temp {
+  background-image: url("../../assets/images/TemperatureImg.png");
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  width: 480px;
+  height: 480px;
+  position: relative;
+  border-radius: 15px;
+}
+.temp-text {
+  position: absolute;
+  top: 30%;
+  left: 43%;
+  font-size: 80px;
+  display: flex;
+  color: #fff;
+}
+.temp-text > span {
+  font-size: 24px;
+}
+.temp-sec-text {
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 46%;
+}
+.temp-sec-text > span {
+  color: #c2bff4;
+}
+.location-wrap {
+  position: absolute;
+  top: 80px;
+  right: 35px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.location-text {
+  color: #9d99e4;
+}
