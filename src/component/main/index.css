@@ -1,23 +1,20 @@
 /*  */
 
 .main {
-  /* width: 500px; */
-  /* height: 570px;
-  border-radius: 50px;
-  background-image: url("../../assets/images/Background.png");
-  background-repeat: no-repeat;
-  background-size: 100%; */
-  background-color: #6aa9dd;
+  height: 100vh;
+  background-color: #85ace6;
 }
 .main-folder {
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 50px;
 }
 .main-text {
   color: #f1f1f1;
 }
 .temp {
   background-image: url("../../assets/images/TemperatureImg.png");
-  /* background-size: 100%; */
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -57,4 +54,75 @@
 }
 .location-text {
   color: #9d99e4;
+}
+
+/*  */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 400px;
+  position: absolute;
+  bottom: 12px;
+  gap: 20px;
+  left: 64px;
+}
+.wind-wrap {
+  width: 120px;
+  border-radius: 5px;
+  background-image: url("../../assets/images/wind-back.png");
+  display: flex;
+}
+.weather-wrap {
+}
+
+.wind-text {
+  color: #fff;
+}
+
+.humidity-wrap {
+  background-image: url("../../assets/images/wind-back.png");
+  border-radius: 5px;
+  width: 120px;
+}
+.rain-wrap {
+  background-image: url("../../assets/images/wind-back.png");
+  border-radius: 5px;
+  width: 120px;
+}
+
+/* Air section */
+.air {
+  background-image: url("../../assets/images/Air-Quality-back.png");
+  background-repeat: no-repeat;
+  width: 270px;
+  height: 240px;
+  border-radius: 7px;
+  /* position: absolute;
+  right: 200px;
+  top: 150px; */
+}
+.air-folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.air-text {
+  color: #fff;
+}
+
+.status {
+  color: #87ebcd;
+}
+.good-number {
+  color: #e7e6fb;
+}
+.air-item > p {
+  color: #87ebcd;
+  font-weight: 700;
+}
+
+.air-item > span {
+  color: #e7e6fb;
 }

@@ -1,0 +1,14 @@
+/*  */
+.week-folder {
+  background-image: url("../../assets/images/Week-Weather.png");
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  height: 220px;
+}
+.week-name-text,
+.week-text > span {
+  color: #c2bff4;
+}
+.week-text {
+  color: #fff;
+}

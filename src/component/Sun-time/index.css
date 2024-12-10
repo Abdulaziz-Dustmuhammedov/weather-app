@@ -1,0 +1,15 @@
+/*  */
+.suntime {
+  background-image: url("../../assets/images/Air-Quality-back.png");
+  background-repeat: no-repeat;
+  width: 270px;
+  height: 240px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.sun-time-text {
+  color: #dad8f7;
+}
