@@ -3,11 +3,11 @@
   background-image: url("../../assets/images/Air-Quality-back.png");
   background-repeat: no-repeat;
   width: 270px;
-  height: 240px;
+  height: 230px;
   border-radius: 7px;
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .sun-time-text {

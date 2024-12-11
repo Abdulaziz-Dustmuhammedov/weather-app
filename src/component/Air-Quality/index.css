@@ -1,0 +1,32 @@
+/*  */
+.air {
+  background-image: url("../../assets/images/Air-Quality-back.png");
+  background-repeat: no-repeat;
+  width: 270px;
+  height: 230px;
+  border-radius: 7px;
+}
+.air-folder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.air-text {
+  color: #fff;
+}
+
+.status {
+  color: #87ebcd;
+}
+.good-number {
+  color: #e7e6fb;
+}
+.air-item > p {
+  color: #87ebcd;
+  font-weight: 700;
+}
+
+.air-item > span {
+  color: #e7e6fb;
+}

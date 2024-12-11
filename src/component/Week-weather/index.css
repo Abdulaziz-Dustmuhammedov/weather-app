@@ -3,7 +3,8 @@
   background-image: url("../../assets/images/Week-Weather.png");
   background-repeat: no-repeat;
   border-radius: 7px;
-  height: 220px;
+  height: 170px;
+  margin-top: 30px;
 }
 .week-name-text,
 .week-text > span {

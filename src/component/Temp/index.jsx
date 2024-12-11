@@ -9,17 +9,17 @@ import rain from "../../assets/icons/rain.svg";
 const Temp = () => {
   return (
     <div className="temp">
-      <img src={cloudImg} alt="" />
+      <img className="temp-cloud-img" src={cloudImg} alt="" />
       <div className="location-wrap cursor-pointer  ">
         <img className="" src={locationIcon} alt="" />
         <p className="location-text">Rio do Sul, SC</p>
       </div>
-      <div>
+      <div className="temp-text-folder">
         <p className="temp-text">
           18 <span>°C</span>
         </p>
         <p className="temp-sec-text">
-          22° <span>16°</span>{" "}
+          22° <span>16°</span>
         </p>
       </div>
 

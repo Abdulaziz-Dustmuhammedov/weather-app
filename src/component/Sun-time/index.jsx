@@ -10,7 +10,7 @@ const SunTime = () => {
         <img src={sun} alt="" />
         <p className="sun-time-text">Sun time</p>
         <div className="suntime-folder">
-          <img src={sunTimeImg} alt="" />
+          <img src={sunTimeImg} alt="" width={230} height={130} />
         </div>
       </div>
     </div>

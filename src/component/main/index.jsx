@@ -8,10 +8,10 @@ import "./index.css";
 const Main = () => {
   return (
     <div className="main">
-      <div className="flex items-center gap-11">
+      <div className="main-folder flex sm:flex-col lg:flex items-center gap-11">
         <Temp />
         <div className="gap-9">
-          <div className="flex items-center gap-9">
+          <div className="main-wrapper flex-col md:flex-row gap-9 ">
             <AirQuality />
             <SunTime />
           </div>

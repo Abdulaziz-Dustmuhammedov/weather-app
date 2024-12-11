@@ -9,7 +9,7 @@ import cloudySun from "../../assets/icons/cloudy-sun.svg";
 const WeekWeather = () => {
   return (
     <div className="week-folder flex items-center justify-around gap-6">
-      <div className="week-wrapper">
+      <div className="week-wrapper  ml-3">
         <p className="week-name-text text-sm mb-4">Tomorrow</p>
         <img className="mb-6" src={cloud} alt="cloud" />
         <p className="week-text text-base">
