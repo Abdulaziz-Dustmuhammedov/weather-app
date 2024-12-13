@@ -1,12 +1,10 @@
-//
-
 import AirQuality from "../Air-Quality";
 import SunTime from "../Sun-time";
 import Temp from "../Temp";
 import WeekWeather from "../Week-weather";
 import "./index.css";
 
-const Main = () => {
+export default function Main() {
   return (
     <div className="main">
       <div className="main-folder gap-11">
@@ -21,6 +19,4 @@ const Main = () => {
       </div>
     </div>
   );
-};
-
-export default Main;
+}
