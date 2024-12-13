@@ -10,7 +10,7 @@
 
   /* #bug agar height: 100vh; bersam responsivda to'liq ko'rinmiy qovotii  */
 
-  height: 1200px;
+  min-height: 100vh;
 }
 
 .main-wrapper {
