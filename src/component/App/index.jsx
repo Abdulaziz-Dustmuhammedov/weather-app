@@ -1,10 +1,10 @@
-import Main from "../Main";
+import SubMain from "../SubMain";
 import "./index.css";
 
 function App() {
   return (
     <div className="app">
-      <Main />
+      <SubMain />
     </div>
   );
 }
