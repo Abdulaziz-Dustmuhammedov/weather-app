@@ -7,8 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* #bug agar height: 100vh; bersam responsivda to'liq ko'rinmiy qovotii  */
   min-height: 100vh;
 }
 
@@ -25,6 +23,9 @@
 @media (max-width: 1120px) {
   .main-folder {
     flex-direction: column !important;
+  }
+  .week-folder {
+    margin-bottom: 100px;
   }
 }
 
