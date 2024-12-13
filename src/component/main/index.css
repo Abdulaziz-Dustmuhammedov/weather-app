@@ -7,21 +7,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* max-width: 1300px; */
-  /* min-width: 1300px; */
-  height: 100vh;
-  height: 1700px;
+
+  /* #bug agar height: 100vh; bersam responsivda to'liq ko'rinmiy qovotii  */
+
+  height: 1200px;
 }
 
 .main-wrapper {
-  margin-top: 43px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.main-folder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 1120px) {
   .main-folder {
     flex-direction: column !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .main-wrapper {
+    flex-direction: column;
   }
 }

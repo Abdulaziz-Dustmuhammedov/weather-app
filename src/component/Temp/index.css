@@ -1,15 +1,11 @@
 /*  */
-/* .temp {
-  display: flex;
-  align-items: center;
-} */
+
 .temp {
   background-image: url("../../assets/images/TemperatureImg.png");
   background-repeat: no-repeat;
   background-size: cover;
 
-  max-width: 480px;
-  width: 100%;
+  width: 480px;
   height: 480px;
   border-radius: 15px;
 
@@ -23,9 +19,6 @@
 }
 
 .temp-text {
-  /* position: absolute;
-  top: 30%;
-  left: 43%; */
   font-size: 80px;
   display: flex;
   color: #fff;
@@ -103,13 +96,6 @@
   }
 }
 
-@media (max-width: 767px) {
-  .wrapper {
-    gap: 15px;
-    left: 18px;
-  }
-}
-
 @media (max-width: 550px) {
   .wrapper {
     display: flex;
@@ -121,6 +107,8 @@
   .temp {
     /* width: 400px; */
     margin: 0 20px;
+    max-width: 480px;
+    width: 100%;
   }
 }
 
