@@ -15,7 +15,7 @@
 .temp-text-folder {
   position: absolute;
   left: 39%;
-  top: 21%;
+  top: 30%;
 }
 
 .temp-text {
@@ -88,6 +88,32 @@
   width: 120px;
 }
 
+.input-wrap {
+  position: absolute;
+  top: 85px;
+  left: 20%;
+  gap: 7px;
+
+  display: flex;
+  align-items: center;
+}
+.search-input {
+  border-radius: 30px;
+  padding: 10px 15px;
+  width: 250px;
+  outline: none;
+}
+.search-btn {
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+/* .search-img {
+  color: #fff;
+  background-color: #fff;
+} */
+
 /* Responsiv design */
 
 @media (max-width: 1120px) {
@@ -112,10 +138,20 @@
 }
 
 @media (max-width: 420px) {
-  /* .temp {
-    width: 350px;
-  } */
   .wrapper {
     left: 35%;
+  }
+  .input-wrap {
+    left: 10%;
+  }
+}
+@media (max-width: 370px) {
+  .input-wrap {
+    left: 6%;
+  }
+}
+@media (max-width: 340px) {
+  .search-input {
+    width: 230px;
   }
 }

@@ -5,6 +5,7 @@ import locationIcon from "../../assets/icons/locationIcon.svg";
 import wind from "../../assets/icons/wind.svg";
 import humidity from "../../assets/icons/humidity.svg";
 import rain from "../../assets/icons/rain.svg";
+import search from "../../assets/icons/search.svg";
 
 const Temp = () => {
   return (
@@ -13,6 +14,18 @@ const Temp = () => {
       <div className="location-wrap cursor-pointer  ">
         <img className="" src={locationIcon} alt="" />
         <p className="location-text">Rio do Sul, SC</p>
+      </div>
+      <div className="input-wrap">
+        <input type="search" className="search-input" placeholder="search" />
+        <button className="search-btn">
+          <img
+            className="search-img"
+            src={search}
+            alt="search img "
+            width={30}
+            height={30}
+          />
+        </button>
       </div>
       <div className="temp-text-folder">
         <p className="temp-text">
