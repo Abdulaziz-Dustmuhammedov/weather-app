@@ -6,8 +6,35 @@ import wind from "../../assets/icons/wind.svg";
 import humidity from "../../assets/icons/humidity.svg";
 import rain from "../../assets/icons/rain.svg";
 import search from "../../assets/icons/search.svg";
+import { useState } from "react";
+import { createRef } from "react";
+import { useRef } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Temp = () => {
+  const searchInput = useRef();
+
+  const [weather, setWeather] = useState({});
+
+  const searchCity = () => {
+    let city = searchInput.current.value.trim();
+    let api_key = "8d586b2b216b1effa59a2a863909faf3";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+
+    axios
+      .get(url)
+      .then((response) => {
+        setWeather(response.data);
+        toast.success("Success");
+      })
+      .catch((error) => {
+        toast.error("Error");
+      });
+  };
+
+  console.log(weather);
+
   return (
     <div className="temp">
       <img className="temp-cloud-img" src={cloudImg} alt="" />
@@ -16,8 +43,13 @@ const Temp = () => {
         <p className="location-text">Rio do Sul, SC</p>
       </div>
       <div className="input-wrap">
-        <input type="search" className="search-input" placeholder="search" />
-        <button className="search-btn">
+        <input
+          type="search"
+          className="search-input"
+          placeholder="search"
+          ref={searchInput}
+        />
+        <button onClick={searchCity} className="search-btn">
           <img
             className="search-img"
             src={search}
@@ -29,7 +61,8 @@ const Temp = () => {
       </div>
       <div className="temp-text-folder">
         <p className="temp-text">
-          18 <span>°C</span>
+          {weather?.main?.temp ? Math.round(weather?.main?.temp) : 0}
+          <span>°C</span>
         </p>
         <p className="temp-sec-text">
           22° <span>16°</span>
@@ -47,7 +80,9 @@ const Temp = () => {
           />
           <div className="weather-wrap flex flex-col items-start ">
             <p className="wind-text">wind</p>
-            <p className="wind-text">17 km/h</p>
+            <p className="wind-text">
+              {weather?.wind?.speed ? Math.round(weather?.wind?.speed) : 0} km/h
+            </p>
           </div>
         </div>
 
@@ -55,7 +90,9 @@ const Temp = () => {
           <img className="ml-2" src={humidity} alt="" width={27} height={24} />
           <div className="weather-wrap flex flex-col items-start ">
             <p className="wind-text">humidity</p>
-            <p className="wind-text">31 %</p>
+            <p className="wind-text">
+              {weather?.main?.humidity ? weather?.main?.humidity : 0} %
+            </p>
           </div>
         </div>
 
@@ -72,3 +109,95 @@ const Temp = () => {
 };
 
 export default Temp;
+
+// const Temp = () => {
+//   const searchCity = () => {
+//     alert(inputVal);
+//   };
+
+//   const [inputVal, setInputVal] = useState("");
+
+//   const handleChange = (e) => {
+//     setInputVal(e.target.value);
+//     console.log(e.target.value);
+//   };
+
+//   return (
+//     <div className="temp">
+//       <img className="temp-cloud-img" src={cloudImg} alt="" />
+//       <div className="location-wrap cursor-pointer  ">
+//         <img className="" src={locationIcon} alt="" />
+//         <p className="location-text">Rio do Sul, SC</p>
+//       </div>
+//       <div className="input-wrap">
+//         <input
+//           type="search"
+//           className="search-input"
+//           placeholder="search"
+//           onChange={handleChange}
+//           value={inputVal}
+//         />
+//         <button onClick={searchCity} className="search-btn">
+//           <img
+//             className="search-img"
+//             src={search}
+//             alt="search img "
+//             width={30}
+//             height={30}
+//           />
+//         </button>
+//       </div>
+//       <div className="temp-text-folder">
+//         <p className="temp-text">
+//           18 <span>°C</span>
+//         </p>
+//         <p className="temp-sec-text">
+//           22° <span>16°</span>
+//         </p>
+//       </div>
+
+//       <div className="wrapper">
+//         <div className="wind-wrap flex items-center gap-3">
+//           <img
+//             className="opacity-50 ml-2"
+//             src={wind}
+//             alt=""
+//             width={27}
+//             height={24}
+//           />
+//           <div className="weather-wrap flex flex-col items-start ">
+//             <p className="wind-text">wind</p>
+//             <p className="wind-text">17 km/h</p>
+//           </div>
+//         </div>
+
+//         <div className="humidity-wrap flex items-center gap-3">
+//           <img className="ml-2" src={humidity} alt="" width={27} height={24} />
+//           <div className="weather-wrap flex flex-col items-start ">
+//             <p className="wind-text">humidity</p>
+//             <p className="wind-text">31 %</p>
+//           </div>
+//         </div>
+
+//         <div className="rain-wrap flex items-center gap-3">
+//           <img className="ml-2" src={rain} alt="" width={27} height={24} />
+//           <div className="weather-wrap flex flex-col items-start ">
+//             <p className="wind-text">rain</p>
+//             <p className="wind-text">10 %</p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Temp;
+
+// state = {
+//   inputVal: ""
+// };
+// handleChange = (e) => {
+//   this.setState(state{
+//     inputVal:e.target.value
+//   })
+// };

@@ -1,3 +1,4 @@
+import { ToastContainer } from "react-toastify";
 import AirQuality from "../Air-Quality";
 import SunTime from "../Sun-time";
 import Temp from "../Temp";
@@ -15,6 +16,7 @@ export default function SubMain() {
             <SunTime />
           </div>
           <WeekWeather />
+          <ToastContainer />
         </div>
       </div>
     </div>

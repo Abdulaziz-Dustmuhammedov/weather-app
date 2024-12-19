@@ -24,7 +24,7 @@
   color: #fff;
 }
 .temp-text > span {
-  font-size: 24px;
+  font-size: 60px;
 }
 .temp-sec-text {
   font-size: 20px;
@@ -107,6 +107,7 @@
   background-color: #fff;
   border-radius: 50%;
   padding: 7px;
+  outline: none;
 }
 
 /* .search-img {
