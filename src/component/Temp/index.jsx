@@ -6,20 +6,27 @@ import wind from "../../assets/icons/wind.svg";
 import humidity from "../../assets/icons/humidity.svg";
 import rain from "../../assets/icons/rain.svg";
 import search from "../../assets/icons/search.svg";
-import { useState } from "react";
-import { createRef } from "react";
+import { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
 const Temp = () => {
+  const api_key = "8d586b2b216b1effa59a2a863909faf3";
   const searchInput = useRef();
 
   const [weather, setWeather] = useState({});
 
+  // const [loader, setLoader] = useState(false);
+
   const searchCity = () => {
     let city = searchInput.current.value.trim();
-    let api_key = "8d586b2b216b1effa59a2a863909faf3";
+    if (!city) {
+      toast.error("Shahar nomini kiriting!");
+      return;
+    }
+
+    // setLoader(true);
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
 
     axios
@@ -27,26 +34,61 @@ const Temp = () => {
       .then((response) => {
         setWeather(response.data);
         toast.success("Success");
+        // setLoader(false);
+      })
+      .catch((error) => {
+        toast.error("Error");
+        // setLoader(false);
+      });
+    //loader
+
+    // .finally(() => {
+    //   setLoader(false);
+    // });
+
+    //loader
+  };
+
+  useEffect(() => {
+    let city = "Tashkent";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`;
+
+    // setLoader(true);
+    axios
+      .get(url)
+      .then((response) => {
+        setWeather(response.data);
       })
       .catch((error) => {
         toast.error("Error");
       });
-  };
+    // loader
+
+    // .finally(() => {
+    //   setLoader(false);
+    // });
+
+    // loader
+  }, []);
 
   console.log(weather);
 
   return (
     <div className="temp">
-      <img className="temp-cloud-img" src={cloudImg} alt="" />
+      {/* loader  */}
+      {/* {loader && <h1>Loading</h1>} */}
+      {/* loader  */}
+
       <div className="location-wrap cursor-pointer  ">
         <img className="" src={locationIcon} alt="" />
         <p className="location-text">Rio do Sul, SC</p>
       </div>
       <div className="input-wrap">
         <input
+          defaultValue={"Tashkent"}
           type="search"
           className="search-input"
-          placeholder="search"
+          placeholder="Search"
           ref={searchInput}
         />
         <button onClick={searchCity} className="search-btn">
@@ -60,13 +102,21 @@ const Temp = () => {
         </button>
       </div>
       <div className="temp-text-folder">
+        <img
+          className="temp-cloud-img"
+          src={cloudImg}
+          alt=""
+          width={100}
+          height={100}
+        />
         <p className="temp-text">
           {weather?.main?.temp ? Math.round(weather?.main?.temp) : 0}
           <span>°C</span>
         </p>
-        <p className="temp-sec-text">
-          22° <span>16°</span>
-        </p>
+        {/* <p className="temp-sec-text">
+          {weather?.main?.temp_max ? weather?.main?.temp_max : 0} /
+          <span>{weather?.main?.temp_min ? weather?.main?.temp_min : 0}</span>
+        </p> */}
       </div>
 
       <div className="wrapper">
