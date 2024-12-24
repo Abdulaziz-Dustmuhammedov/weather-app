@@ -7,8 +7,8 @@ import rain from "../../assets/icons/rain.svg";
 import search from "../../assets/icons/search.svg";
 
 import cloudImg from "../../assets/images/cloud.svg";
-import sunImg from "../../assets/images/sun.png";
 import cloudyDay from "../../assets/images/partly-cloudy-day.png";
+import sunImg from "../../assets/images/sun.png";
 import cloudy from "../../assets/images/cloudy.png";
 import shover from "../../assets/images/showers.png";
 import heavyShowers from "../../assets/images/heavy-showers.png";
