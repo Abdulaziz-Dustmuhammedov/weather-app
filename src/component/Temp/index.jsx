@@ -7,10 +7,9 @@ import rain from "../../assets/icons/rain.svg";
 import search from "../../assets/icons/search.svg";
 
 import cloudImg from "../../assets/images/cloud.svg";
-import sun from "../../assets/images/sun.png";
+import sunImg from "../../assets/images/sun.png";
 import cloudyDay from "../../assets/images/partly-cloudy-day.png";
 import cloudy from "../../assets/images/cloudy.png";
-import clearNight from "../../assets/images/clear-night.png";
 import shover from "../../assets/images/showers.png";
 import heavyShowers from "../../assets/images/heavy-showers.png";
 import thunderstormShowers from "../../assets/images/thunderstorm-showers.png";
@@ -121,7 +120,7 @@ const Temp = () => {
           weather?.weather
             ? weather?.weather[0].icon === "01d" ||
               weather?.weather[0].icon === "01n"
-              ? sun
+              ? sunImg
               : weather?.weather[0].icon === "02d" ||
                 weather?.weather[0].icon === "02n"
               ? cloudyDay
