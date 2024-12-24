@@ -1,11 +1,24 @@
 //
 import "./index.css";
-import cloudImg from "../../assets/images/cloud.svg";
 import locationIcon from "../../assets/icons/locationIcon.svg";
 import wind from "../../assets/icons/wind.svg";
 import humidity from "../../assets/icons/humidity.svg";
 import rain from "../../assets/icons/rain.svg";
 import search from "../../assets/icons/search.svg";
+
+import cloudImg from "../../assets/images/cloud.svg";
+import sun from "../../assets/images/sun.png";
+import cloudyDay from "../../assets/images/partly-cloudy-day.png";
+import cloudy from "../../assets/images/cloudy.png";
+import clearNight from "../../assets/images/clear-night.png";
+import shover from "../../assets/images/showers.png";
+import heavyShowers from "../../assets/images/heavy-showers.png";
+import thunderstormShowers from "../../assets/images/thunderstorm-showers.png";
+import snow from "../../assets/images/snow.png";
+import mist from "../../assets/images/mist.png";
+
+import overcast from "../../assets/images/overcast.png";
+
 import { useEffect, useState } from "react";
 import { useRef } from "react";
 import axios from "axios";
@@ -23,6 +36,7 @@ const Temp = () => {
     let city = searchInput.current.value.trim();
     if (!city) {
       toast.error("Shahar nomini kiriting!");
+      toast.error("Enter the city name");
       return;
     }
 
@@ -101,14 +115,43 @@ const Temp = () => {
           />
         </button>
       </div>
+      <img
+        className="temp-cloud-img"
+        src={
+          weather?.weather
+            ? weather?.weather[0].icon === "01d" ||
+              weather?.weather[0].icon === "01n"
+              ? sun
+              : weather?.weather[0].icon === "02d" ||
+                weather?.weather[0].icon === "02n"
+              ? cloudyDay
+              : weather?.weather[0].icon === "03d" ||
+                weather?.weather[0].icon === "03n"
+              ? cloudy
+              : weather?.weather[0].icon === "04d" ||
+                weather?.weather[0].icon === "04n"
+              ? cloudImg
+              : weather?.weather[0].icon === "09d" ||
+                weather?.weather[0].icon === "09n"
+              ? shover
+              : weather?.weather[0].icon === "10d" ||
+                weather?.weather[0].icon === "10n"
+              ? heavyShowers
+              : weather?.weather[0].icon === "11d" ||
+                weather?.weather[0].icon === "11n"
+              ? thunderstormShowers
+              : weather?.weather[0].icon === "13d" ||
+                weather?.weather[0].icon === "13n"
+              ? snow
+              : mist
+            : overcast
+        }
+        alt="clear"
+        width={100}
+        height={100}
+      />
       <div className="temp-text-folder">
-        <img
-          className="temp-cloud-img"
-          src={cloudImg}
-          alt=""
-          width={100}
-          height={100}
-        />
+        {/* <img src={cloudImg} alt="" /> */}
         <p className="temp-text">
           {weather?.main?.temp ? Math.round(weather?.main?.temp) : 0}
           <span>°C</span>
