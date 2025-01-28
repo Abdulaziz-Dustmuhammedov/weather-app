@@ -94,7 +94,7 @@ const Temp = () => {
 
       <div className="location-wrap cursor-pointer  ">
         <img className="" src={locationIcon} alt="" />
-        <p className="location-text">Rio do Sul, SC</p>
+        <p className="location-text">Rio do Sul</p>
       </div>
       <div className="input-wrap">
         <input
